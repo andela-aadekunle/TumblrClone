@@ -1,4 +1,4 @@
-
+ 
 var tumblrAPI = {
   
 
@@ -27,7 +27,7 @@ var tumblrAPI = {
 
   blogSearch: function(){
     $("#blog").click(function() {
-     $(this).val(" ").css('background', 'url("./img/loader.gif") no-repeat center');
+     $(this).val(" ").css('background', 'url("./img/loader2.gif") no-repeat center ');
       tumblrAPI.getData('text');
 
     });
@@ -112,7 +112,7 @@ var tumblrAPI = {
       var date = response.response.posts[i].date;
       var postLink = response.response.posts[i].post_url;
       var imgLink = response.response.posts[i].photos[0].alt_sizes[2].url;
-      var image = '<li><a href="'+postLink+'"><img src="'+imgLink+'"></a><p class="date">Date Posted:'+date+'</p></li>';
+      var image = '<li><a href="'+postLink+'"><img style="height: 90%; width: 90%;" src="'+imgLink+'"></a><p class="date">Date Posted:'+date+'</p></li>';
       $("#result").append(image);
       // $('#photo').val("Photos").css('background', '#2a8bc7');
     })
