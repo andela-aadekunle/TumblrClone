@@ -27,7 +27,7 @@ var tumblrAPI = {
 
   blogSearch: function(){
     $("#blog").click(function() {
-     $(this).val(" ").css('background', 'url("./img/loader2.gif") no-repeat center ');
+     $(this).val(" ").css('background', 'url("./img/loading2.gif") no-repeat center ');
       tumblrAPI.getData('text');
 
     });
@@ -104,8 +104,8 @@ var tumblrAPI = {
     // callback function for photosearch
 
   photoCallback:function(response){
-    var pictureObject = response.response; 
-    console.log(pictureObject);
+    // var pictureObject = response.response; 
+    // console.log(pictureObject);
     $("#result").empty();
     tumblrAPI.responseValidation(response);
     $.each(response.response.posts, function(i, photo){
@@ -136,7 +136,7 @@ var tumblrAPI = {
     // callback function for audiosearch
 
 
-  audioCallback:function(response){
+  audioCallback: function (response) {
     console.log(response.response);
     tumblrAPI.responseValidation(response);
     $("#result").empty();
@@ -151,7 +151,7 @@ var tumblrAPI = {
   // callback function for initialsearch
 
 
-  blogCallback:function(response){
+  blogCallback: function (response) {
     console.log(response.response);
     console.log(response.response.posts);
     tumblrAPI.responseValidation(response);
@@ -200,7 +200,7 @@ var tumblrAPI = {
       success:callback,
     });
 
-  },
+  }
 
 
 }
